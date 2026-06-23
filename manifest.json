@@ -1,6 +1,6 @@
 {
-  "name": "Palm Golf: Tiger 5",
-  "short_name": "Palm Golf",
+  "name": "Tiger 5 stats",
+  "short_name": "Tiger 5",
   "description": "Minimalist golf stats tracker focused on the Tiger 5 errors.",
   "start_url": "./index.html",
   "display": "standalone",

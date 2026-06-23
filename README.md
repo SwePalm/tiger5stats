@@ -1,8 +1,8 @@
-# Palm Golf: Tiger 5 Tracker
+# Tiger 5 stats
 
 A minimalist, responsive, and offline-first mobile web application designed to track the "Tiger 5" golf errors with zero friction during a round. 
 
-This app is branded specifically for **Stefan Palm** using a tropical-golf theme ("Palm & Sage") and a custom palm-flag logo.
+This app features a tropical-golf theme ("Palm & Sage") and a custom palm-flag logo.
 
 ---
 
@@ -30,7 +30,7 @@ Because this is a Progressive Web App (PWA), it can behave like a native iOS app
 3. On your iPhone, open **Safari** and navigate to `http://192.168.1.XX:8000`.
 4. Tap the **Share** button (the square with an arrow pointing up) at the bottom of Safari.
 5. Scroll down the sharing menu and select **Add to Home Screen**.
-6. Name it **Palm Golf** and tap **Add**.
+6. Name it **Tiger 5** and tap **Add**.
 7. Launch the app from your home screen!
 
 ---
@@ -73,7 +73,7 @@ tiger5stats/
 ├── manifest.json      # PWA metadata
 ├── sw.js              # Service Worker for offline capability
 └── icons/             # App icons
-    ├── logo.svg       # Symmetrical palm-golf logo
+    ├── logo.svg       # Palm-flag logo
     ├── icon-192.png   # 192px app launcher icon
     └── icon-512.png   # 512px app launcher icon
 ```

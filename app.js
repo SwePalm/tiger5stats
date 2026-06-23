@@ -1,4 +1,4 @@
-// Palm Golf: Tiger 5 Tracker - Application Logic
+// Tiger 5 stats Tracker - Application Logic
 
 // --- STATE MANAGEMENT ---
 let state = {
@@ -33,9 +33,23 @@ function triggerHaptic() {
 // --- LOCAL STORAGE UTILITIES ---
 function loadState() {
   try {
-    const savedRounds = localStorage.getItem('PALM_GOLF_ROUNDS');
-    const savedCurrent = localStorage.getItem('PALM_GOLF_CURRENT_ROUND');
-    const savedTheme = localStorage.getItem('PALM_GOLF_THEME');
+    // Migrate old keys if they exist to prevent data loss
+    if (localStorage.getItem('PALM_GOLF_ROUNDS') && !localStorage.getItem('TIGER5_STATS_ROUNDS')) {
+      localStorage.setItem('TIGER5_STATS_ROUNDS', localStorage.getItem('PALM_GOLF_ROUNDS'));
+      localStorage.removeItem('PALM_GOLF_ROUNDS');
+    }
+    if (localStorage.getItem('PALM_GOLF_CURRENT_ROUND') && !localStorage.getItem('TIGER5_STATS_CURRENT_ROUND')) {
+      localStorage.setItem('TIGER5_STATS_CURRENT_ROUND', localStorage.getItem('PALM_GOLF_CURRENT_ROUND'));
+      localStorage.removeItem('PALM_GOLF_CURRENT_ROUND');
+    }
+    if (localStorage.getItem('PALM_GOLF_THEME') && !localStorage.getItem('TIGER5_STATS_THEME')) {
+      localStorage.setItem('TIGER5_STATS_THEME', localStorage.getItem('PALM_GOLF_THEME'));
+      localStorage.removeItem('PALM_GOLF_THEME');
+    }
+
+    const savedRounds = localStorage.getItem('TIGER5_STATS_ROUNDS');
+    const savedCurrent = localStorage.getItem('TIGER5_STATS_CURRENT_ROUND');
+    const savedTheme = localStorage.getItem('TIGER5_STATS_THEME');
 
     if (savedRounds) state.rounds = JSON.parse(savedRounds);
     if (savedCurrent) state.currentRound = JSON.parse(savedCurrent);
@@ -51,20 +65,20 @@ function loadState() {
 }
 
 function saveRounds() {
-  localStorage.setItem('PALM_GOLF_ROUNDS', JSON.stringify(state.rounds));
+  localStorage.setItem('TIGER5_STATS_ROUNDS', JSON.stringify(state.rounds));
 }
 
 function saveCurrentRound() {
   if (state.currentRound) {
-    localStorage.setItem('PALM_GOLF_CURRENT_ROUND', JSON.stringify(state.currentRound));
+    localStorage.setItem('TIGER5_STATS_CURRENT_ROUND', JSON.stringify(state.currentRound));
   } else {
-    localStorage.removeItem('PALM_GOLF_CURRENT_ROUND');
+    localStorage.removeItem('TIGER5_STATS_CURRENT_ROUND');
   }
 }
 
 function saveThemeSetting(theme) {
   state.theme = theme;
-  localStorage.setItem('PALM_GOLF_THEME', theme);
+  localStorage.setItem('TIGER5_STATS_THEME', theme);
   applyTheme(theme);
 }
 
@@ -345,10 +359,10 @@ function renderDashboard() {
     <!-- Top Brand Card -->
     <div class="brand-hero">
       <div class="brand-hero-logo">
-        <img src="icons/logo.svg" alt="Palm Golf Logo" />
+        <img src="icons/logo.svg" alt="Tiger 5 Logo" />
       </div>
-      <h2>Palm Golf: Tiger 5</h2>
-      <p class="subtitle">Focus on zero errors</p>
+      <h2>Tiger 5 stats</h2>
+      <p class="subtitle">focus on zero errors</p>
     </div>
 
     <!-- Quick Stats Grid -->
@@ -1122,7 +1136,7 @@ function exportJSONData() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `palm_golf_backup_${new Date().toISOString().split('T')[0]}.json`;
+  a.download = `tiger5_stats_backup_${new Date().toISOString().split('T')[0]}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -1159,7 +1173,7 @@ function exportCSVData() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `palm_golf_stats_${new Date().toISOString().split('T')[0]}.csv`;
+  a.download = `tiger5_stats_${new Date().toISOString().split('T')[0]}.csv`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);

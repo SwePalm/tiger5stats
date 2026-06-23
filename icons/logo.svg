@@ -2,25 +2,21 @@
   <!-- Background -->
   <rect width="512" height="512" rx="112" fill="#08120E"/>
   
-  <!-- Decorative Inner Ring -->
-  <circle cx="256" cy="256" r="210" fill="none" stroke="#0C3823" stroke-width="8"/>
+  <!-- Outer circular frame -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#D4A373" stroke-width="8"/>
   <circle cx="256" cy="256" r="190" fill="#0A1C16" />
 
-  <!-- Golf Flag / Central Palm Spine -->
-  <!-- Flagpole -->
-  <line x1="256" y1="110" x2="256" y2="390" stroke="#D4A373" stroke-width="12" stroke-linecap="round"/>
-  <!-- Golf Cup / Green Hole -->
-  <ellipse cx="256" cy="390" rx="36" ry="12" fill="#08120E" stroke="#D4A373" stroke-width="5" />
-  <!-- Flag (Triangle) -->
-  <path d="M 256 110 L 340 150 L 256 190 Z" fill="#D4A373"/>
+  <!-- Golf Pin Cup -->
+  <ellipse cx="190" cy="410" rx="30" ry="10" fill="#08120E" stroke="#D4A373" stroke-width="4" />
 
-  <!-- Symmetrical Palm Leaflets - Left Side -->
-  <path d="M 256 220 Q 150 190 100 250 Q 170 270 256 245 Z" fill="#D4A373" opacity="0.9"/>
-  <path d="M 256 270 Q 130 250 80 310 Q 160 330 256 295 Z" fill="#D4A373" opacity="0.9"/>
-  <path d="M 256 320 Q 140 310 90 370 Q 170 380 256 345 Z" fill="#D4A373" opacity="0.9"/>
+  <!-- Golf Flagpole -->
+  <line x1="190" y1="90" x2="190" y2="410" stroke="#D4A373" stroke-width="12" stroke-linecap="round"/>
+  <!-- Ball Top -->
+  <circle cx="190" cy="85" r="14" fill="#D4A373"/>
 
-  <!-- Symmetrical Palm Leaflets - Right Side -->
-  <path d="M 256 220 Q 362 190 412 250 Q 342 270 256 245 Z" fill="#D4A373" opacity="0.9"/>
-  <path d="M 256 270 Q 382 250 432 310 Q 352 330 256 295 Z" fill="#D4A373" opacity="0.9"/>
-  <path d="M 256 320 Q 372 310 422 370 Q 342 380 256 345 Z" fill="#D4A373" opacity="0.9"/>
+  <!-- Golf Flag (Triangle) -->
+  <path d="M 190 110 L 380 190 L 190 270 Z" fill="#0C3823" stroke="#D4A373" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- Palm Tree silhouette inside the flag -->
+  <path d="M 243 225 Q 242 195 244 174 C 237 176 227 178 221 183 C 230 178 238 174 241 172 C 233 165 226 161 219 161 C 228 162 235 166 241 170 C 238 160 236 150 234 140 C 238 148 241 156 243 166 C 246 156 249 148 253 140 C 251 150 249 160 246 170 C 252 166 259 162 268 161 C 261 161 254 165 246 172 C 249 174 257 178 266 183 C 260 178 250 176 244 174 Q 246 195 247 225 Z" fill="#D4A373" />
 </svg>
