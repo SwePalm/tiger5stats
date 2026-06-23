@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Palm Golf: Tiger 5</title>
+  
+  <!-- PWA & Mobile Optimization -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Palm Golf">
+  <meta name="theme-color" content="#0C3823">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/logo.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Typography: Google Fonts (Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Application Container -->
+  <main class="app-container">
+
+    <!-- 1. DASHBOARD / HOME SCREEN -->
+    <section id="screen-dashboard" class="screen">
+      <!-- In-progress banner for resuming rounds -->
+      <div id="in-progress-banner" class="hidden"></div>
+      
+      <!-- Dynamic Dashboard Content -->
+      <div id="dashboard-content">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- 2. SETUP ROUND VIEW -->
+    <section id="screen-setup" class="screen hidden">
+      <div class="card card-setup">
+        <h2 class="card-title text-center">Setup Round</h2>
+        
+        <div class="form-group">
+          <label for="setup-course">Course Name</label>
+          <input type="text" id="setup-course" class="form-control" placeholder="e.g., Augusta National, Pebble Beach" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="setup-date">Date</label>
+          <input type="date" id="setup-date" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="setup-holes">Holes to Play</label>
+          <select id="setup-holes" class="form-control">
+            <option value="18" selected>18 Holes</option>
+            <option value="9">9 Holes</option>
+            <option value="6">6 Holes</option>
+            <option value="12">12 Holes</option>
+          </select>
+        </div>
+
+        <div class="button-stack" style="margin-top: 2rem;">
+          <button class="btn btn-primary btn-lg btn-full" id="btn-setup-start">Start Round</button>
+          <button class="btn btn-secondary btn-full" id="btn-setup-cancel">Cancel</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ACTIVE ROUND HOLE LOG VIEW -->
+    <section id="screen-active-round" class="screen hidden">
+      <div id="active-round-content">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- 4. ROUND SUMMARY VIEW -->
+    <section id="screen-summary" class="screen hidden">
+      <div id="summary-content">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- 5. TRENDS & HISTORY VIEW -->
+    <section id="screen-trends" class="screen hidden">
+      <div class="header-bar">
+        <h2>Season Trends</h2>
+      </div>
+      <div id="trends-content">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- 6. SETTINGS VIEW -->
+    <section id="screen-settings" class="screen hidden">
+      <div class="header-bar">
+        <h2>Settings</h2>
+      </div>
+      <div id="settings-content">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
